@@ -6,7 +6,7 @@ const books = [
     genre: "Non-Fiction - Memoir",
     summary: `In a series of personal essays, prominent journalist and LGBTQIA+ activist George M. Johnson explores his childhood, adolescence, and college years in New Jersey and Virginia. From the memories of getting his teeth kicked out by bullies at age five, to flea marketing with his loving grandmother, to his first sexual relationships, this young-adult memoir weaves together the trials and triumphs faced by Black queer boys. 
     
-        Both a primer for teens eager to be allies as well as a reassuring testimony for young queer men of color, All Boys Aren't Blue covers topics such as gender identity, toxic masculinity, brotherhood, family, structural marginalization, consent, and Black joy. Johnson's emotionally frank style of writing will appeal directly to young adults.`,
+Both a primer for teens eager to be allies as well as a reassuring testimony for young queer men of color, All Boys Aren't Blue covers topics such as gender identity, toxic masculinity, brotherhood, family, structural marginalization, consent, and Black joy. Johnson's emotionally frank style of writing will appeal directly to young adults.`,
     myRating: 4,
     readDate: "2021-08-02",
   },
@@ -17,9 +17,9 @@ const books = [
     author: "Eyal Press",
     genre: "Non-Fiction - Politics",
     summary: `
-    A groundbreaking, urgent report from the front lines of dirty work--the work that society considers essential but morally compromised. Drone pilots who carry out targeted assassinations. Undocumented immigrants who man the "kill floors" of industrial slaughterhouses. Guards who patrol the wards of America's most violent and abusive prisons. In Dirty Work, Eyal Press offers a paradigm-shifting view of the moral landscape of contemporary America through the stories of people who perform society's most ethically troubling jobs. As Press shows, we are increasingly shielded and distanced from an array of morally questionable activities that other, less privileged people perform in our name.
+A groundbreaking, urgent report from the front lines of dirty work--the work that society considers essential but morally compromised. Drone pilots who carry out targeted assassinations. Undocumented immigrants who man the "kill floors" of industrial slaughterhouses. Guards who patrol the wards of America's most violent and abusive prisons. In Dirty Work, Eyal Press offers a paradigm-shifting view of the moral landscape of contemporary America through the stories of people who perform society's most ethically troubling jobs. As Press shows, we are increasingly shielded and distanced from an array of morally questionable activities that other, less privileged people perform in our name.
 
-    The COVID-19 pandemic has drawn unprecedented attention to the issue of "essential workers," and to the health and safety risks to which workers in prisons and slaughterhouses are exposed. But Dirty Work examines another, less familiar set of occupational hazards: psychological and emotional hardships such as stigma, shame, PTSD, and moral injury. These burdens fall disproportionately on low-income workers, undocumented immigrants, women, and people of color.
+The COVID-19 pandemic has drawn unprecedented attention to the issue of "essential workers," and to the health and safety risks to which workers in prisons and slaughterhouses are exposed. But Dirty Work examines another, less familiar set of occupational hazards: psychological and emotional hardships such as stigma, shame, PTSD, and moral injury. These burdens fall disproportionately on low-income workers, undocumented immigrants, women, and people of color.
 
 Illuminating the moving, at times harrowing stories of the people doing society's dirty work, and incisively examining the structures of power and complicity that shape their lives, Press reveals fundamental truths about the moral dimensions of work, and the hidden costs of inequality in America.`,
     myRating: 5,
@@ -60,7 +60,7 @@ Drawing on his experience as part of the AIDS generation, Brian Malloy brings au
     genre: "Non-Fiction - Politics",
     summary: `In 2012, an Oregon mother named Julie Keith opened up a package of Halloween decorations. The cheap foam headstones had been five dollars at Kmart, too good a deal to pass up. But when she opened the box, something shocking fell out: an SOS letter, handwritten in broken English.
     
-  “Sir: If you occassionally buy this product, please kindly resend this letter to the World Human Right Organization. Thousands people here who are under the persicuton of the Chinese Communist Party Government will thank and remember you forever.”
+“Sir: If you occassionally buy this product, please kindly resend this letter to the World Human Right Organization. Thousands people here who are under the persicuton of the Chinese Communist Party Government will thank and remember you forever.”
 
 The note’s author, Sun Yi, was a mild-mannered Chinese engineer turned political prisoner, forced into grueling labor for campaigning for the freedom to join a forbidden meditation movement. He was imprisoned alongside petty criminals, civil rights activists, and tens of thousands of others the Chinese government had decided to “reeducate,” carving foam gravestones and stitching clothing for more than fifteen hours a day.
 
@@ -103,8 +103,8 @@ With spare and graceful prose, O Beautiful presents an immersive portrait of a c
     author: "Anna Abney",
     genre: "Historical Fiction",
       summary: `1665. It is five years since King Charles II returned from exile, the scars of the English Civil Wars are yet to heal and now the Great Plague engulfs the land. Alethea Hawthorne is safe inside the walls of the Calverton household as a companion to their daughter. She waits in anticipation of her brother William’s pardon for killing a man in a duel before they can both return to their ancestral home in Measham Hall.
-    
-    But when Alethea suddenly finds herself cast out on the streets of London, a long road to Derbyshire lies ahead of her. Militias have closed their boroughs off to outsiders for fear of contamination. Fortune smiles on her when Jack appears, an unlikely travelling companion who helps this determined country girl to navigate a perilous new world of religious dissenters, charlatans and a pestilence that afflicts peasants and lords alike.
+
+But when Alethea suddenly finds herself cast out on the streets of London, a long road to Derbyshire lies ahead of her. Militias have closed their boroughs off to outsiders for fear of contamination. Fortune smiles on her when Jack appears, an unlikely travelling companion who helps this determined country girl to navigate a perilous new world of religious dissenters, charlatans and a pestilence that afflicts peasants and lords alike.
 
 Anna Abney's immersive debut is a fast-paced, multi-layered novel that intimately explores the social and religious divides at the heart of the Restoration period.`,
     myRating: 3,

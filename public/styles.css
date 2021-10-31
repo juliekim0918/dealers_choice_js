@@ -40,6 +40,9 @@ p.genre {
   border: 1px solid #003049;
   border-radius: 10px;
 }
+p.summary {
+  white-space: pre-wrap;
+}
 
 p.my-rating, p.date-read {
     font-size:1.2em;
