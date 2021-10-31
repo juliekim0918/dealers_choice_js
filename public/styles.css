@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: anti-aliased;
+  -moz-osx-font-smoothing: greyscale;
+}
+
+body {
+  font-family: "Proza Libre", sans-serif;
+  background-color: #fdf0d5;
+}
+
+.global-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1.title {
+  text-align: center;
+  font-size: 2.6em;
+}
+
+h3.title {
+  font-weight: 700;
+  font-size: 1.6em;
+  margin: 0;
+}
+
+h4.author {
+  font-weight: 500;
+  font-size: 1.2em;
+  margin: 10px 0 0 0;
+}
+
+p.genre {
+  background-color: #003049;
+  color: white;
+  font-size: 0.8em;
+  padding: 10px;
+  align-self: start;
+  border: 1px solid #003049;
+  border-radius: 10px;
+}
+
+p.my-rating, p.date-read {
+    font-size:1.2em;
+}
+
+p.my-rating span, p.date-read span{
+    font-weight:700;
+}
+
+.book-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-card-anchor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-basis: 30%;
+}
+.book-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 320px;
+  padding: 2rem;
+  flex-basis: 30%;
+  border: 5px solid #003049;
+  /* -webkit-box-shadow: 0 0.125rem 1.3rem rgb(15 20 48 / 10%);
+    box-shadow: 0 0.125rem 1.3rem rgb(15 20 48 / 10%); */
+  border-radius: 20px;
+  margin: 20px;
+  transition: 0.35s cubic-bezier(0.19, 1, 0.4, 1);
+}
+
+.book-card:hover {
+  transform: translateY(-1.6%);
+  box-shadow: 0 7px 21px 0 rgb(0 0 0 / 7%);
+  cursor: pointer;
+}
+a {
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
+.book-container {
+    display:flex;
+    flex-direction: column;
+  width: 90%;
+  margin: 20px auto;
+  padding: 30px;
+  border: 5px solid #003049;
+  border-radius: 20px;
+}
+
+a.go-back-btn {
+    font-size: 1.2em;
+    font-weight:800;
+    color: #003049;
+}

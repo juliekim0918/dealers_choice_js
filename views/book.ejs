@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books I've Read in 2021</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="book-container">
+      <h3 class="title"><%= currBook.title%></h3>
+      <h4 class="author"><%= currBook.author %></h4>
+      <p class="genre"><%= currBook.genre %></p>
+      <p class="summary"><%= currBook.summary %></p>
+      <p class="date-read"><span>Date finished: </span><%= currBook.readDate %></p>
+      <p class="my-rating"><span>My rating: </span><%= currBook.myRating %> / 5</p>
+      <a href="/" class="go-back-btn"> < Go back</a>
+    </div>
+  </body>
+</html>

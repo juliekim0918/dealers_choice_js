@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Books I've Read in 2021</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="global-container">
+      <h1 class="title">Some books I read in 2021 <%= locals.text || ' ' %></h1>
+      <div class="book-cards-container">
+        <% bookBank.getBooks().forEach((book) => { %>
+        <a href="/books/<%= book.id %>" class="book-card-anchor">
+          <div class="book-card">
+            <h3 class="title"><%= book.title%></h3>
+            <h4 class="author"><%= book.author %></h4>
+            <p class="genre"><%= book.genre %></p>
+          </div>
+        </a>
+        <% } ) %>
+      </div>
+    </div>
+  </body>
+</html>
