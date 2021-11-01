@@ -104,3 +104,15 @@ a.go-back-btn {
     font-weight:800;
     color: #003049;
 }
+
+@media screen and (max-width: 425px) {
+  .book-card {
+    min-height:100%;
+    margin:0;
+  }
+  .book-card-anchor {
+    flex-basis:100%;
+        margin: 20px 0;
+
+  }
+}
