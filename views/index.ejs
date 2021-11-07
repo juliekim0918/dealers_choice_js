@@ -11,22 +11,29 @@
       href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,700;1,500&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./public/styles.css" />
   </head>
   <body>
     <div class="global-container">
+
       <h1 class="title">Some books I read in 2021 <%= locals.text || ' ' %></h1>
+      <div class="add-btn-container"><a href="/add" class="add-btn"><p>Add a book </p><%- plusIcon %></a></div>
       <div class="book-cards-container">
-        <% bookBank.getBooks().forEach((book) => { %>
+        <% bookList.forEach((book) => { %>
         <a href="/books/<%= book.id %>" class="book-card-anchor">
           <div class="book-card">
             <h3 class="title"><%= book.title%></h3>
-            <h4 class="author"><%= book.author %></h4>
-            <p class="genre"><%= book.genre %></p>
+            <h4 class="author"><%= book.author_name %></h4>
+            <div class="genre-container">
+              <% book.genres.split(', ').forEach((genre) => { %>
+                <p class="genre"><%= genre %></p>              
+              <% }) %>
+            </div>
           </div>
         </a>
         <% } ) %>
       </div>
     </div>
+
   </body>
 </html>

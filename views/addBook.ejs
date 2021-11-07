@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Book</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Proza+Libre:ital,wght@0,400;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../public/styles.css">
+</head>
+<body>
+    <div class="book-container">
+        <h3 class="title">What book did you read?</h3>
+        <form action="/add" method="POST" id="addBook">
+            <label for="title">Title:</label>
+            <input type="text" value="" name="title">
+            <label for="author">Author:</label>
+            <input type="text" value="" name="author">
+            <label for="genre">Genre:</label>
+            <div class="select-container">
+                <%- dropdownIcon %> 
+                <select name="genre" type="button" >
+                    <option value="" disabled="" selected="">Select a genre</option>
+                    <% genreList.forEach(genre => { %>
+                        <option value="<%= genre.name %>"> <%= genre.name %> </option>
+                    <% }) %>
+                </select>
+            </div>
+            <label for="summary">Summary:</label>
+            <textarea type="text" value="" name="summary"></textarea>
+            <label for="rating">Rating:</label>
+            <small>(Choose a value from 1 to 5)</small>
+            <input type="number" value="" name="rating">
+            <button type="submit" class="add-book-submit">Submit</button>
+        </form>
+
+    </div>
+    
+</body>
+</html>

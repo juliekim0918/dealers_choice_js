@@ -1,29 +1,22 @@
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
-const bookBank = require("./bookBank");
+// const bookBank = require("./bookBank");
 // can set up views; 'view engine' is necessary; you can put 'ejs' or 'pug' depending on what library you're using
 app.set("view engine", "ejs");
 app.use(morgan("dev"));
-app.use(express.static("public"));
+// app.use(express.static("public"));
+// or you can use
+// app.use('/public', express.static(path.join(__dirname,'public')))
+app.use('/public', express.static('public'))
+// you need to make sure to require above i.e. const path = require('path')
+const { client, getBooks, getBook } = require('./db');
+app.use('/books', require('./routes/books'));
+app.use('/', require('./routes/index'))
 
-app.get("/", (req, res) => {
-  // you can pass a second parameter to send any data you want to the html/ejs file
-  res.render("index", {
-    bookBank,
-    bookList: bookBank.getBooks(),
-  });
-});
 
-app.get('/books/:id', (req, res) => {
-    const id = req.params.id
-    res.render("book", {
-        bookBank,
-        id,
-        currBook: bookBank.findBook(id)
-    })
-})
 
+port = process.env.PORT || 8000
 app.listen(8000, () => {
   console.log("listening in port 8000");
 });
