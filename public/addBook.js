@@ -19,11 +19,11 @@ ratingInput.addEventListener("change", function () {
 
 const openGenreAdder = (event) => {
   const selectVal = event.target.value;
-  const inactiveEl = [...document.getElementsByClassName("inactive")];
-  if (selectVal === "Other") {
-    inactiveEl.forEach((item) => item.classList.remove("inactive"));
-  } else {
-    inactiveEl.forEach((item) => item.classList.add("inactive"));
+  const newGenreInput = [...document.getElementsByName("new-genre")];
+    if (selectVal === "Other") {
+      newGenreInput.forEach((item) => item.classList.remove("inactive"));
+    } else {
+    newGenreInput.forEach((item) => item.classList.add("inactive"));
   }
 };
 
