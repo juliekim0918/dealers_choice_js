@@ -1,9 +1,10 @@
 /* THINGS I NEED TO DO 
  -- ADDING VALIDATION 
- --- don't create a row if author name already exists
- --- throw error if rating is not a number from 1 to 5
+ --- don't create a row if author name already exists [DONE]
+ --- throw error if rating is not a number from 1 to 5 [DONE - but should be a better way than to add 10 lines of code]
  -- ALLOWING MULTI SELECT FOR GENRES ON FORM
- -- ALLOWING ADDING A NEW GENRE ON FORM
+ -- ALLOWING ADDING A NEW GENRE ON FORM [DONE]
+ -- ALLOWING EDITING AN EXISTING POST 
 */
 
 const { Client } = require('pg');
@@ -49,14 +50,13 @@ b.id = $1
 `;
 
 const createAuthorQuery = `
-INSERT INTO authors (name)
-VALUES ($1)
-RETURNING *
-`
-// SELECT $1
-// WHERE NOT EXISTS (
-//     SELECT 1 FROM authors WHERE authors.name = '$1'
-// )
+INSERT INTO authors
+(name)
+SELECT $1
+WHERE NOT EXISTS (SELECT name
+              FROM authors
+              WHERE name=$2);
+`;
 
 const createBookQuery = `
 INSERT INTO books (authorId, title,  summary, dateFinished, rating)
@@ -95,21 +95,27 @@ const deleteBook = async (id) => {
     await client.query(`DELETE FROM books WHERE id=$1`, [id])
 }
 
-const createBook = async (author, title, summary, rating, genre) => {
-    const newAuthor = await client.query(createAuthorQuery, [author])
-    // console.log(newAuthor.rows, 'THIS IS THE NEW AUTHOR')
+const createBook = async (author, title, summary, rating, genre, newGenre) => {
+    const newAuthor = await client.query(createAuthorQuery,[author, author] );
+    //console.log(newAuthor, 'THIS IS THE NEW AUTHOR')
     const newBook = await client.query(createBookQuery, [author, title, summary, rating]);
     // need to get rows out of newBook
-    // console.log(newBook.rows[0].id, 'THIS IS THE NEW BOOK')
-    const genreId = await client.query(`SELECT id FROM genres WHERE name=$1`, [genre])
-    // console.log(genreId.rows[0].id)
-    const insertBooks_Genres = await client.query(`INSERT INTO books_genres (bookId, genreId) VALUES ($1, $2) RETURNING *`, [newBook.rows[0].id, genreId.rows[0].id])
+    //console.log(newBook.rows[0].id, 'THIS IS THE NEW BOOK')
+    let genreId = 1;
+    if (genre === 'Other') {
+        // if they selected Other, access the newGenre to create a new genre
+        genreId = (await client.query(`INSERT INTO genres (name) VALUES ($1) RETURNING *`, [newGenre]))
+    } else {
+         genreId = await client.query(`SELECT id FROM genres WHERE name=$1`, [genre])
+    }
+    await client.query(`INSERT INTO books_genres (bookId, genreId) VALUES ($1, $2) RETURNING *`, [newBook.rows[0].id, genreId.rows[0].id])
     // MECHANISM TO CHECK WHAT THE CURRENT DB/TABLES LOOKS LIKE
-    // const [currAuthors, currBooks] = await Promise.all([
-    //     await client.query('SELECT * FROM authors'),
-    //     await client.query('SELECT b.id, b.title FROM books b')
-    // ])
-    // console.log(currAuthors.rows, currBooks.rows)
+    const [currAuthors, currGenres, currBooks] = await Promise.all([
+        await client.query('SELECT * FROM authors'),
+        await client.query('SELECT * FROM genres'),
+        await client.query('SELECT b.id, b.title FROM books b')
+    ])
+    //console.log(currAuthors.rows, currGenres.rows, currBooks.rows)
 
     return newBook
 }

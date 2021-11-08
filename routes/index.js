@@ -43,9 +43,10 @@ router.post('/add', async (req, res, next) => {
       const title = req.body.title;
       const author = req.body.author;
       const summary = req.body.summary;
-      const rating = req.body.rating;
+        const rating = req.body.rating;
         const genre = req.body.genre;
-        const newBook = await createBook(author, title, summary, rating, genre);
+        const newGenre = req.body['new-genre'];
+        const newBook = await createBook(author, title, summary, rating, genre, newGenre);
       res.redirect(`/books/${newBook.rows[0].id}`);
     } catch (e) {
         next(e)

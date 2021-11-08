@@ -18,28 +18,31 @@
         <h3 class="title">What book did you read?</h3>
         <form action="/add" method="POST" id="addBook">
             <label for="title">Title:</label>
-            <input type="text" value="" name="title">
+            <input type="text" required="" value="" name="title">
             <label for="author">Author:</label>
-            <input type="text" value="" name="author">
+            <input type="text" required="" value="" name="author">
             <label for="genre">Genre:</label>
             <div class="select-container">
                 <%- dropdownIcon %> 
-                <select name="genre" type="button" >
+                <select required="" name="genre" type="button" >
                     <option value="" disabled="" selected="">Select a genre</option>
                     <% genreList.forEach(genre => { %>
                         <option value="<%= genre.name %>"> <%= genre.name %> </option>
                     <% }) %>
+                    <option value="Other">Other</option>
                 </select>
             </div>
+            <label for="new-genre" class="inactive">What's the genre?</label>
+            <input type="text" class="inactive" required="" value="" name="new-genre">
             <label for="summary">Summary:</label>
-            <textarea type="text" value="" name="summary"></textarea>
+            <textarea type="text" required="" value="" name="summary"></textarea>
             <label for="rating">Rating:</label>
-            <small>(Choose a value from 1 to 5)</small>
-            <input type="number" value="" name="rating">
+            <small class="msg">(Choose a value from 1 to 5)</small>
+            <input type="number" required="" value="" name="rating">
             <button type="submit" class="add-book-submit">Submit</button>
         </form>
 
     </div>
-    
+    <script src="../public/addBook.js"></script>
 </body>
 </html>

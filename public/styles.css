@@ -61,7 +61,7 @@ a.go-back-btn p {
 
 a.add-btn:hover, a.go-back-btn:hover{
   background-color: white;
-  border: 1px solid white;
+  border: 3px solid #003049;
 }
 
 a.add-btn:hover p, a.add-btn:hover svg, a.go-back-btn:hover p{
@@ -74,7 +74,7 @@ p.genre, a.add-btn, a.go-back-btn {
   font-size: 0.8em;
   padding: 10px;
   align-self: start;
-  border: 1px solid #003049;
+  border: 3px solid #003049;
   border-radius: 10px;
 }
 p.summary {
@@ -172,6 +172,14 @@ textarea {
 }
 input[name="rating"] {
   max-width:100px;
+}
+
+.red {
+   color: #c1121f;
+}
+
+form .inactive {
+  display:none;
 }
 
 form#deleteBook button {
